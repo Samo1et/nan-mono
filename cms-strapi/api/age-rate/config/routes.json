@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/age-rates",
+      "handler": "age-rate.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/age-rates/count",
+      "handler": "age-rate.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/age-rates/:id",
+      "handler": "age-rate.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/age-rates",
+      "handler": "age-rate.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/age-rates/:id",
+      "handler": "age-rate.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/age-rates/:id",
+      "handler": "age-rate.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

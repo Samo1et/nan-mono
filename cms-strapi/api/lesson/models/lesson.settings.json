@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lessons",
+  "info": {
+    "name": "Lesson"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "author": {
+      "model": "author"
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "age_rate": {
+      "model": "age-rate"
+    },
+    "lesson_type": {
+      "model": "lesson-type"
+    },
+    "tasks": {
+      "collection": "task"
+    },
+    "answers": {
+      "collection": "answer"
+    }
+  }
+}
