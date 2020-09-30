@@ -1,12 +1,13 @@
 
 import { getAllPostsForHome } from '@/lib/api'
+import Layout from '@/components/layout'
 
 
 export default function Courses(){
     return(
-        <>
+        <Layout>
             <div>Course page</div>
-        </>
+        </Layout>
     )
 }
 
