@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Link from 'next/link'
 
 const Lesson = props => {
-    const {id, title, description, age_rate, icon, lesson_type, status} = props;
-    console.log(props);
+    const {id, title, description, age_rate, icon, lesson_type, status,slug} = props;
+
     const imageUrl = `${
         icon.url.startsWith('/') ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ''
       }${icon.url}`
@@ -21,10 +22,11 @@ const Lesson = props => {
             {
                 status === 'published' &&
                 <>
-                <div style={imageStyles}>
-                    
-                </div>
-                <p>{lesson_type.name}</p>
+                    <div style={imageStyles}>
+                        <Link as={`/lesson/${slug}`} href="/lesson/[slug]">
+                            <a className="hover:underline">{title}</a>
+                        </Link>
+                    </div>
                 </>
             }
         </div>

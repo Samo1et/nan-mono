@@ -50,6 +50,17 @@ export async function getAllPostsWithSlug() {
   return data?.allPosts
 }
 
+export async function getAllLessonsWithSlug() {
+  const data = fetchAPI(`
+    {
+      lessons {
+        slug
+      }
+    }
+  `)
+  return data?.allPosts
+}
+
 export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
     `
@@ -145,6 +156,7 @@ export async function getAllLessons() {
     query Lessons($where: JSON){
       lessons(where: $where) {
         id
+        slug
         title
         description
         age_rate {
@@ -172,6 +184,48 @@ export async function getAllLessons() {
       variables: {
         where: {
          
+        },
+      },
+    }
+  )
+  return data?.lessons
+}
+
+export async function getLessonBySlug(slug){
+  const data = await fetchAPI(
+    `
+    query Lessons($where: JSON){
+      lessons(where: $where) {
+        id
+        slug
+        title
+        description
+        age_rate {
+          rate
+        }
+        icon {
+          url
+        }
+        lesson_type {
+          name
+        }
+        status
+        answers {
+          id
+          name
+          isRight
+          type
+          image {
+            url
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        where: {
+          slug,
         },
       },
     }

@@ -735,6 +735,9 @@
               }
             }
           },
+          "slug": {
+            "type": "uid"
+          },
           "created_by": {
             "required": [
               "id",
@@ -858,6 +861,9 @@
           },
           "level": {
             "type": "string"
+          },
+          "slug": {
+            "type": "uid"
           },
           "created_by": {
             "type": "string"
