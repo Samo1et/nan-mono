@@ -40,6 +40,17 @@
     },
     "answers": {
       "collection": "answer"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "published",
+        "edit"
+      ],
+      "default": "edit"
+    },
+    "level": {
+      "model": "level"
     }
   }
 }

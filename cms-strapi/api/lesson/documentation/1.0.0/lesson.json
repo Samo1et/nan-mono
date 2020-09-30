@@ -708,6 +708,33 @@
               }
             }
           },
+          "status": {
+            "type": "string",
+            "default": "edit",
+            "enum": [
+              "published",
+              "edit"
+            ]
+          },
+          "level": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "number": {
+                "type": "integer"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -819,6 +846,17 @@
             "type": "string"
           },
           "answers": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "default": "edit",
+            "enum": [
+              "published",
+              "edit"
+            ]
+          },
+          "level": {
             "type": "string"
           },
           "created_by": {

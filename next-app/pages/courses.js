@@ -1,20 +1,22 @@
 
-import { getAllPostsForHome } from '@/lib/api'
+import { getAllLessons } from '@/lib/api'
 import Layout from '@/components/layout'
+import LessonList from '@/components/common/LessonList'
 
+export default function Courses({allLesson}){
 
-export default function Courses(){
     return(
         <Layout>
             <div>Course page</div>
+            <LessonList list={allLesson} /> 
         </Layout>
     )
 }
 
 
 export async function getStaticProps({ preview = null }) {
-    const allPosts = (await getAllPostsForHome(preview)) || []
+    const allLesson = (await getAllLessons()) || []
     return {
-      props: { allPosts, preview },
+      props: { allLesson },
     }
   }

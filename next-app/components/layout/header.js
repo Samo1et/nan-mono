@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
 const sections = [
   { title: 'О нас', url: '#' },
   { title: 'Профессии', url: '#' },
-  { title: 'Курсы', url: '#' },
   { title: 'Цены', url: '#' },
   { title: 'Вопросы', url: '#' },
   { title: 'Контакты', url: '#' }
@@ -42,6 +41,11 @@ export default function Header(props) {
   const handleClickSignIn = (e) => {
     e.preventDefault()
     router.push('/signin')
+  }
+
+  const handleClickCourses = (e) => {
+    e.preventDefault()
+    router.push('/courses')
   }
 
   return (
@@ -66,6 +70,16 @@ export default function Header(props) {
         </Button>
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
+        <Button
+            color="inherit"
+            noWrap
+            variant="body2"
+            className={classes.toolbarLink}
+            component='a'
+            onClick={handleClickCourses}
+          >
+            Курсы
+          </Button>
         {sections.map((section) => (
           <Button
             color="inherit"

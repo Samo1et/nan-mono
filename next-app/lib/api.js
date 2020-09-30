@@ -138,3 +138,43 @@ export async function getPostAndMorePosts(slug, preview) {
   )
   return data
 }
+
+export async function getAllLessons() {
+  const data = await fetchAPI(
+    `
+    query Lessons($where: JSON){
+      lessons(where: $where) {
+        id
+        title
+        description
+        age_rate {
+          rate
+        }
+        icon {
+          url
+        }
+        lesson_type {
+          name
+        }
+        status
+        answers {
+          name
+          isRight
+          type
+          image {
+            url
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        where: {
+         
+        },
+      },
+    }
+  )
+  return data?.lessons
+}
